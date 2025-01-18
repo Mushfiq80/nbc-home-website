@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "bookCover": "https://i.ibb.co/7Wqw7L6/book1.png",
+      "writerName": "John Doe",
+      "bookTitle": "The Journey Within",
+      "ratings": 4.7
+    },
+    {
+      "id": 2,
+      "bookCover": "https://i.ibb.co/svxXmC9/book2.png",
+      "writerName": "Jane Smith",
+      "bookTitle": "Echoes of Tomorrow",
+      "ratings": 4.5
+    },
+    {
+      "id": 3,
+      "bookCover": "https://i.ibb.co/wNszTJc/book3.png",
+      "writerName": "Robert Brown",
+      "bookTitle": "Shadows in the Mist",
+      "ratings": 4.3
+    },
+    {
+      "id": 4,
+      "bookCover": "https://i.ibb.co/3fdDwxn/book4.png",
+      "writerName": "Emily Carter",
+      "bookTitle": "A Whisper of Magic",
+      "ratings": 4.8
+    },
+    {
+      "id": 5,
+      "bookCover": "https://i.ibb.co/Pt3hDXB/book5.png",
+      "writerName": "Michael Johnson",
+      "bookTitle": "Beneath the Stars",
+      "ratings": 4.6
+    },
+    {
+      "id": 6,
+      "bookCover": "https://example.com/book-cover6.jpg",
+      "writerName": "Sophia Wilson",
+      "bookTitle": "The Art of Letting Go",
+      "ratings": 4.4
+    },
+    {
+      "id": 7,
+      "bookCover": "https://example.com/book-cover7.jpg",
+      "writerName": "Daniel Lee",
+      "bookTitle": "Rise of the Fallen",
+      "ratings": 4.2
+    },
+    {
+      "id": 8,
+      "bookCover": "https://example.com/book-cover8.jpg",
+      "writerName": "Olivia Martin",
+      "bookTitle": "Dreams of the Horizon",
+      "ratings": 4.9
+    },
+    {
+      "id": 9,
+      "bookCover": "https://example.com/book-cover9.jpg",
+      "writerName": "William Taylor",
+      "bookTitle": "The Final Frontier",
+      "ratings": 4.7
+    }
+  ]
+  
