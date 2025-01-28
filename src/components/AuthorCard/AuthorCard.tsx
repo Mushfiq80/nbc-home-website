@@ -17,8 +17,8 @@ const AuthorCard: React.FC<{ author: Author }> = ({ author: author }) => {
                 <img src={image} alt="book1" className="w-40 h-48 object-cover" />
                 
                 <h2 className="text-xl text-center">{name}</h2>
-                <h2 className="text-xl text-center">{title}</h2>
-                <p className="text-gray-600">{description}</p>
+                <h2 className="text-xl text-center w-4/5">{title}</h2>
+                <p className="text-gray-600 w-4/6">{description}</p>
                
             </div>
         </div>
