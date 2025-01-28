@@ -36,7 +36,7 @@ const firstRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({img}: {img: string;}) => {
   return (
-    <figure className={cn("relative w-64 overflow-hidden")}>
+    <figure className={cn("relative w-16 md:w-48 overflow-hidden")}>
       <div className="flex flex-row items-center gap-2">
         <img className="rounded-full" width="48" height="48" alt="" src={img} />
       </div>
@@ -47,7 +47,7 @@ const ReviewCard = ({img}: {img: string;}) => {
 export function MarqueeDemo() {
   return (
     <div className="relative h-[100px] flex w-full flex-col items-center justify-center overflow-hidden rounded-lg">
-      <Marquee pauseOnHover className="[--duration:20s]">
+      <Marquee pauseOnHover className="[--duration:8s] lg:[--duration:20s]">
         {firstRow.map((review, idx) => (
           <ReviewCard key={idx} {...review} />
         ))}

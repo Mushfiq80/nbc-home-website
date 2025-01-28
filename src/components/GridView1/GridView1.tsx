@@ -24,7 +24,7 @@ const GridView1 = () => {
         <span className="text-green-600">Fiction</span> Books
       </h1>
       <p>
-        Explore a world of imagination and storytelling with our collection of
+        Explore a world of imagination and storytelling <br />with our collection of
         fiction books
       </p>
       <BookCarousel books={books} />

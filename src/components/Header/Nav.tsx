@@ -1,24 +1,66 @@
 import logo1 from "../../../public/Assets/logo-final 2.png";
 import logo2 from "../../../public/Assets/logo-final 1.png";
+import { NavLink } from "react-router";
 
 const Nav = () => {
+
+    const links =(
+        <>
+            <li>
+                <NavLink to='/'>Home</NavLink>
+            </li>
+            <li>
+                <NavLink to='/about'>About</NavLink>
+            </li>
+            <li>
+                <NavLink to='/Publisher'>Publisher</NavLink>
+            </li>
+            <li>
+                <NavLink to='/Books'>Books</NavLink>
+            </li>
+            <li>
+                <NavLink to='/Authors'>Authors</NavLink>
+            </li>
+            <li>
+                <NavLink to='/contact'>Contact Us</NavLink>
+            </li>
+        </>
+    )
     return (
-        <div className="flex justify-between items-center px-10 py-5">
-            <div className="flex gap-1 h-9 ">
-                <img src={logo1} alt="" />
-                <img src={logo2} alt="" />
+        <div className="navbar shadow-lg">
+            <div className="navbar-start">
+                <div className="dropdown">
+                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul
+                        tabIndex={0}
+                        className="menu menu-sm dropdown-content bg-gray-200 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        {links}
+                    </ul>
+                </div>
+                <a href="/" className="flex items-center space-x-2">
+                <img className="w-1/4 lg:w-full" src={logo1} alt="" />
+                <img className="w-1/2 lg:w-full" src={logo2} alt="" />
+                </a>
             </div>
-            <div>
-                <ul className="flex gap-6">
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Publishers</li>
-                    <li>Books</li>
-                    <li>Authors</li>
-                    <li>Contact Us</li>
+            <div className="navbar-center hidden lg:flex">
+                <ul className="menu menu-horizontal px-1">
+                    {links}
                 </ul>
             </div>
-            <div className="flex gap-2">
+            <div className="navbar-end">
                 <button className="bg-slate-100 text-green-600 px-4 py-2 rounded-lg">Login</button>
                 <button className="bg-green-600 text-white px-4 py-2 rounded-lg">Sign up</button>
             </div>

@@ -1,7 +1,7 @@
 
 const Stats = () => {
     return (
-        <div className="flex flex-col md:flex-row gap-14 justify-center">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-14 justify-center">
             <div className=" text-primary-content">
                 <div className="">
                     <div className="text-3xl font-bold"><span>89,400</span>+</div>
