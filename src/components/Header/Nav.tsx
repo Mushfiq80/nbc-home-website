@@ -60,9 +60,9 @@ const Nav = () => {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <button className="bg-slate-100 text-green-600 px-4 py-2 rounded-lg">Login</button>
-                <button className="bg-green-600 text-white px-4 py-2 rounded-lg">Sign up</button>
+            <div className="navbar-end flex gap-2">
+                <button className="bg-slate-200 text-green-600 px-2 py-1 md:px-3 md:py-2 rounded-lg">Login</button>
+                <button className="bg-green-600 text-white px-2 py-1 md:px-3 md:py-2 rounded-lg">Sign up</button>
             </div>
         </div>
     );
