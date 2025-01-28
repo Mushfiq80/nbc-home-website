@@ -1,6 +1,6 @@
 import BookCard from "../BookCard/BookCard";
 import Slider from "react-slick";
-import { FaCircleArrowRight, FaCircleArrowLeft  } from "react-icons/fa6"; // Importing the arrows from react-icons
+import { FaCircleArrowRight, FaCircleArrowLeft } from "react-icons/fa6"; // Importing the arrows from react-icons
 
 interface Book {
   id: number;
@@ -15,9 +15,10 @@ const BookCarousel = ({ books }: { books: Book[] }) => {
   const settings = {
     // dots: true, // Show dots for navigation
     infinite: true, // Loop through the slides
+    // startSlide: 6, // Start at the first slide
     speed: 500, // Transition speed
     slidesToShow: 5, // Number of slides to show at once
-    slidesToScroll: 2, // Number of slides to scroll at a time
+    slidesToScroll: 3, // Number of slides to scroll at a time
     nextArrow: <SampleNextArrow />, // Custom Next Arrow
     prevArrow: <SamplePrevArrow />, // Custom Prev Arrow
     customPaging: function () {
@@ -67,19 +68,19 @@ const SampleNextArrow = (props: CustomArrowProps) => {
   const { className, onClick } = props;
   return (
     <div
-      className={`${className} text-gray-800 bg-white rounded-full`}
+      className={`${className} rounded-full`}
       style={{
         display: "block",
         right: "10px",
         width: "40px",
-        height: "40px",
+        height: "1px",
         zIndex: 1,
-        padding: "10px",
+        padding: "1px",
         cursor: "pointer",
       }}
       onClick={onClick}
     >
-      <FaCircleArrowRight size={30} color="#4A4A4A" />
+      <FaCircleArrowRight className="hidden md:flex" size={30} color="#4A4A4A" />
     </div>
   );
 };
@@ -89,19 +90,19 @@ const SamplePrevArrow = (props: CustomArrowProps) => {
   const { className, onClick } = props;
   return (
     <div
-      className={`${className} text-gray-800 bg-white rounded-full`}
+      className={`${className} rounded-full`}
       style={{
         display: "block",
         left: "10px",
-        width: "40px",
+        width: "1px",
         height: "40px",
         zIndex: 1,
-        padding: "10px",
+        padding: "1px",
         cursor: "pointer",
       }}
       onClick={onClick}
     >
-      <FaCircleArrowLeft size={30} color="#4A4A4A" />
+      <FaCircleArrowLeft className="hidden md:flex" size={30} color="#4A4A4A" />
     </div>
   );
 };

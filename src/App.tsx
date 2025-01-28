@@ -7,6 +7,11 @@ import ShowCase from './components/ShowCase.tsx/ShowCase'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import StatInfo from './components/StatInfo/StatInfo'
+import InfoSubmit from './components/InfoSubmit/InfoSubmit'
+import GridView2 from './components/GridView2/GridView2'
+import Author from './components/Author/Author'
+import Inspiration from './components/Inspiration/Inspiration'
+import Footer from './components/Footer/Footer'
 
 
 function App() {
@@ -18,6 +23,11 @@ function App() {
       <ShowCase></ShowCase>
       <GridView1></GridView1>
       <StatInfo></StatInfo>
+      <InfoSubmit></InfoSubmit>
+      <GridView2></GridView2>
+      <Author></Author>
+      <Inspiration></Inspiration>
+      <Footer></Footer>
     </>
   )
 }
