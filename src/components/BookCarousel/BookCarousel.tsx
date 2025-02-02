@@ -18,7 +18,9 @@ const BookCarousel = ({ books }: { books: Book[] }) => {
     // startSlide: 6, // Start at the first slide
     speed: 500, // Transition speed
     slidesToShow: 5, // Number of slides to show at once
-    slidesToScroll: 1, // Number of slides to scroll at a time
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500, // Number of slides to scroll at a time
     nextArrow: <SampleNextArrow />, // Custom Next Arrow
     prevArrow: <SamplePrevArrow />, // Custom Prev Arrow
     customPaging: function () {

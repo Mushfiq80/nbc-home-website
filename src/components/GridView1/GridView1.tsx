@@ -20,8 +20,8 @@ const GridView1 = () => {
 
   return (
     <div className="text-center mt-10">
-      <h1 className="text-3xl">
-        <span className="text-green-600">Fiction</span> Books
+      <h1 className="text-3xl font-semibold">
+        <span className="text-green-600 ">Fiction</span> Books
       </h1>
       <p>
         Explore a world of imagination and storytelling <br />with our collection of

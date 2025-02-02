@@ -16,6 +16,8 @@ function AuthorCarousal({ author }: { author: Author[] }) {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 2000,
     slidesToScroll: 1,
     arrows: false,
     appendDots: (dots: React.ReactNode) => (
