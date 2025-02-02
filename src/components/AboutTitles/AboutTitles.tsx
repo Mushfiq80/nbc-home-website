@@ -1,5 +1,3 @@
-
-
 interface TitlesProps {
     titles: {
         title1: string;
@@ -7,8 +5,8 @@ interface TitlesProps {
     };
 }
 
-const AboutTitles: React.FC<TitlesProps> = ({ titles: title }) => {
-    const { title1, title2 } = title;
+const AboutTitles: React.FC<TitlesProps> = ({ titles }) => {
+    const { title1, title2 } = titles; // ✅ Fixed prop destructuring
     return (
         <div className="text-center font-semibold">
             <h1 className="text-2xl md:text-3xl lg:text-4xl">{title1}</h1>
