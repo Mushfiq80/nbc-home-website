@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "image": "https://i.ibb.co/1M3W3pq/writer1.png",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Arundhati_Roy_W.jpg/220px-Arundhati_Roy_W.jpg",
       "name": "Arundhati Roy",
       "title": "Author of 'The God of Small Things'",
       "description": "Arundhati Roy is a renowned Indian author and activist. Her debut novel won the Man Booker Prize in 1997.",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "image": "https://i.ibb.co/vx9rzxH/writer2.png",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Jhumpa_Lahiri_%282015%29.png/220px-Jhumpa_Lahiri_%282015%29.png",
       "name": "Jhumpa Lahiri",
       "title": "Pulitzer Prize-Winning Author",
       "description": "An Indian-American author, Jhumpa Lahiri is known for her works like 'The Interpreter of Maladies' and 'The Namesake.'",
@@ -21,7 +21,7 @@
     },
     {
       "id": 3,
-      "image": "https://i.ibb.co/X8HtB7c/writer3.png",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Salman_Rushdie%2C_2024.jpg/220px-Salman_Rushdie%2C_2024.jpg",
       "name": "Salman Rushdie",
       "title": "Author of 'Midnight's Children'",
       "description": "Salman Rushdie is a British-Indian novelist whose works often blend magical realism with historical fiction.",
@@ -31,7 +31,7 @@
     },
     {
       "id": 4,
-      "image": "https://i.ibb.co/6yg1T4P/kazi-nazrul-islam.png",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Nazrul.jpg/220px-Nazrul.jpg",
       "name": "Kazi Nazrul Islam",
       "title": "The Rebel Poet of Bengal",
       "description": "Known as the 'Bidrohi Kobi' (Rebel Poet), Kazi Nazrul Islam was a Bengali poet, writer, and musician, celebrated for his fiery revolutionary works.",
@@ -41,7 +41,7 @@
     },
     {
       "id": 5,
-      "image": "https://i.ibb.co/FxRTfnf/sarat-chandra.png",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sarat_Chandra_Chattopadhyay_portrait.jpg/220px-Sarat_Chandra_Chattopadhyay_portrait.jpg",
       "name": "Sarat Chandra Chattopadhyay",
       "title": "Author of 'Srikanto' and 'Devdas'",
       "description": "Sarat Chandra Chattopadhyay, a Bengali novelist and short story writer, is renowned for his depictions of rural Bengal and human emotions.",
@@ -51,10 +51,10 @@
     },
     {
       "id": 6,
-      "image": "https://i.ibb.co/P6ZftYQ/writer5.png",
-      "name": "Anita Desai",
-      "title": "Three-Time Booker Prize Finalist",
-      "description": "Anita Desai is an Indian novelist recognized for her deep insights into Indian culture and family dynamics.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Jasimuddin_Lomax_1951_%282%29.jpg/220px-Jasimuddin_Lomax_1951_%282%29.jpg",
+      "name": "Jashimuddin",
+      "title": "Palli Kabi",
+      "description": "Jasimuddin was a Bangladeshi poet, lyricist, composer and writer widely celebrated for his modern ballad sagas in the pastoral mode..",
       "linkedin": "https://linkedin.com/in/anita-desai",
       "xLink": "https://twitter.com/anita_desai",
       "wikipedia": "https://en.wikipedia.org/wiki/Anita_Desai"

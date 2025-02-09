@@ -4,7 +4,7 @@ import InspireCard from "./InspireCard";
 
 const Inspiration = () => {
     return (
-        <div className="mt-20 space-y-5">
+        <div className="mt-20 space-y-5 pb-20">
             <div>
                 <InspirationHead></InspirationHead>
             </div>

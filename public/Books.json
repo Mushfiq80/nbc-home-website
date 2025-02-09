@@ -1,66 +1,65 @@
 [
-    {
-      "id": 1,
-      "bookCover": "https://i.ibb.co/7Wqw7L6/book1.png",
-      "writerName": "John Doe",
-      "bookTitle": "The Journey Within",
-      "ratings": 4.7
-    },
-    {
-      "id": 2,
-      "bookCover": "https://i.ibb.co/svxXmC9/book2.png",
-      "writerName": "Jane Smith",
-      "bookTitle": "Echoes of Tomorrow",
-      "ratings": 4.5
-    },
-    {
-      "id": 3,
-      "bookCover": "https://i.ibb.co/wNszTJc/book3.png",
-      "writerName": "Robert Brown",
-      "bookTitle": "Shadows in the Mist",
-      "ratings": 4.3
-    },
-    {
-      "id": 4,
-      "bookCover": "https://i.ibb.co/3fdDwxn/book4.png",
-      "writerName": "Emily Carter",
-      "bookTitle": "A Whisper of Magic",
-      "ratings": 4.8
-    },
-    {
-      "id": 5,
-      "bookCover": "https://i.ibb.co/Pt3hDXB/book5.png",
-      "writerName": "Michael Johnson",
-      "bookTitle": "Beneath the Stars",
-      "ratings": 4.6
-    },
-    {
-      "id": 6,
-      "bookCover": "https://example.com/book-cover6.jpg",
-      "writerName": "Sophia Wilson",
-      "bookTitle": "The Art of Letting Go",
-      "ratings": 4.4
-    },
-    {
-      "id": 7,
-      "bookCover": "https://example.com/book-cover7.jpg",
-      "writerName": "Daniel Lee",
-      "bookTitle": "Rise of the Fallen",
-      "ratings": 4.2
-    },
-    {
-      "id": 8,
-      "bookCover": "https://example.com/book-cover8.jpg",
-      "writerName": "Olivia Martin",
-      "bookTitle": "Dreams of the Horizon",
-      "ratings": 4.9
-    },
-    {
-      "id": 9,
-      "bookCover": "https://example.com/book-cover9.jpg",
-      "writerName": "William Taylor",
-      "bookTitle": "The Final Frontier",
-      "ratings": 4.7
-    }
-  ]
-  
+  {
+    "id": 1,
+    "bookCover": "https://test.atlantisdecora.com/public/products/prod-1246233.04F72C25.jpg",
+    "writerName": "Humayun Ahmed",
+    "bookTitle": "Himu Mama",
+    "ratings": 4.8
+  },
+  {
+    "id": 2,
+    "bookCover": "https://boibichitra.com/public/uploads/products/meta/I7dtZZ9l11QNNSoLTG6GtNuR6ktwHAyVGzLGzM0y.jpeg",
+    "writerName": "Muhammad Zafar Iqbal",
+    "bookTitle": "Amar Bondhu Rashed",
+    "ratings": 4.9
+  },
+  {
+    "id": 3,
+    "bookCover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3f3B9lZb_1o4mcaYEUDjO8HOXuUUto1Xy9g&s",
+    "writerName": "Selina Hossain",
+    "bookTitle": "Hangor Nodi Grenade",
+    "ratings": 4.7
+  },
+  {
+    "id": 4,
+    "bookCover": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/The_cover_image_of_Maa.jpg/220px-The_cover_image_of_Maa.jpg",
+    "writerName": "Anisul Hoque",
+    "bookTitle": "Ma",
+    "ratings": 4.8
+  },
+  {
+    "id": 5,
+    "bookCover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK6BdOF9QxH2jn3zYPbiUJZOg1lToWyHtUAA&s",
+    "writerName": "Imdadul Haq Milon",
+    "bookTitle": "Noorjahan",
+    "ratings": 4.6
+  },
+  {
+    "id": 6,
+    "bookCover": "https://bengaliebook.com/wp-content/uploads/2022/04/%E0%A6%A8%E0%A6%BF%E0%A6%B7%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%A7-%E0%A6%B2%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%A8-724x1024.jpg",
+    "writerName": "Syed Shamsul Haq",
+    "bookTitle": "Nishiddho Loban",
+    "ratings": 4.7
+  },
+  {
+    "id": 7,
+    "bookCover": "https://m.media-amazon.com/images/M/MV5BMmVkYjdjOTEtMDA2NC00NzYwLTg1NjEtZTdkOTE0ZTU0M2I2XkEyXkFqcGc@._V1_.jpg",
+    "writerName": "Ahsan Habib",
+    "bookTitle": "Kothao Keu Nei",
+    "ratings": 4.5
+  },
+  {
+    "id": 8,
+    "bookCover": "https://fs.pbs.com.bd/DIR/Com/PBS/Product/Image/1811242.jpg",
+    "writerName": "Shawkat Osman",
+    "bookTitle": "Janani",
+    "ratings": 4.6
+  },
+  {
+    "id": 9,
+    "bookCover": "https://atlantisdecora.com/public/products/20221213051234Ji0khO.webp",
+    "writerName": "Kazi Nazrul Islam",
+    "bookTitle": "Shanchita",
+    "ratings": 4.9
+  }
+]

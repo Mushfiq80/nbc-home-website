@@ -20,7 +20,7 @@ const BookCarousel = ({ books }: { books: Book[] }) => {
     slidesToShow: 5, // Number of slides to show at once
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1500, // Number of slides to scroll at a time
+    autoplaySpeed: 2000, // Number of slides to scroll at a time
     nextArrow: <SampleNextArrow />, // Custom Next Arrow
     prevArrow: <SamplePrevArrow />, // Custom Prev Arrow
     customPaging: function () {
