@@ -1,7 +1,7 @@
 
 const SearchFields = () => {
     return (
-        <div className="p-6 bg-white shadow-md rounded-lg">
+        <div className="p-6 bg-white border-2 rounded-lg">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <input type="text" placeholder="Enter Title" className="input input-bordered w-full" />
                 <select className="select select-bordered w-full">
@@ -12,9 +12,9 @@ const SearchFields = () => {
                 </select>
                 <select className="select select-bordered w-full">
                     <option disabled selected>Select a Publisher</option>
-                    <option>Penguin</option>
-                    <option>HarperCollins</option>
-                    <option>Macmillan</option>
+                    <option>Kishor Alo</option>
+                    <option>Somoy</option>
+                    <option>Advance</option>
                 </select>
                 <select className="select select-bordered w-full">
                     <option disabled selected>Select Author</option>

@@ -9,17 +9,16 @@ interface Book {
 }
 
 const BookCard = ({ book }: { book: Book }) => {
-
     const { writerName, bookTitle, ratings, bookCover } = book;
     return (
-        <div className="w-[220px] mt-10 border border-gray-100 shadow-lg bg-slate-100 p-2 inline-block">
-            <div className="flex rounded-lg flex-col items-center space-y-2">
+        <div className="w-[220px] mt-10 border border-gray-100 shadow-lg bg-slate-100 p-2 flex flex-col justify-between h-full">
+            <div className="flex flex-col items-center space-y-2">
                 <img src={bookCover} alt="book1" className="w-40 h-60 object-cover" />
                 <Rating key={ratings}></Rating>
                 <h2 className="text-xl text-center">{bookTitle}</h2>
                 <p className="text-gray-600">{writerName}</p>
-                <button className="btn btn-success w-10/12 btn-sm">Add to My List</button>
             </div>
+            <button className="btn btn-success w-10/12 btn-sm mt-2 self-center">Add to My List</button>
         </div>
     );
 };

@@ -62,3 +62,8 @@ export const commitments = [
 ];
 
 
+export const booksTitle = {
+  title1: "Search",
+  title2: "Books",
+};
+

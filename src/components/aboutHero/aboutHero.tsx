@@ -1,6 +1,7 @@
 import { titles } from "@/lib/Title";
-import AboutTitles from "../AboutTitles/AboutTitles";
+
 import HeroDisplay from "./heroDisplay";
+import AboutTitles from "../Titles/AboutTitles";
 
 const AboutHero = () => {
     const heroTitle = titles;

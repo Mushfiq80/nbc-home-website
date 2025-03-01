@@ -1,5 +1,6 @@
-import AboutTitles from "../AboutTitles/AboutTitles";
+
 import { titles } from "@/lib/Title";
+import AboutTitles from "../Titles/AboutTitles";
 
 const AboutMap = () => {
     const MapTitle = titles;

@@ -5,7 +5,7 @@ interface TitlesProps {
     };
 }
 
-const AboutTitles: React.FC<TitlesProps> = ({ titles }) => {
+const BooksTitle: React.FC<TitlesProps> = ({ titles }) => {
     const { title1, title2 } = titles; // ✅ Fixed prop destructuring
     return (
         <div className="text-center font-semibold">
@@ -15,4 +15,4 @@ const AboutTitles: React.FC<TitlesProps> = ({ titles }) => {
     );
 };
 
-export default AboutTitles;
+export default BooksTitle;

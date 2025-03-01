@@ -61,5 +61,66 @@
     "writerName": "Kazi Nazrul Islam",
     "bookTitle": "Shanchita",
     "ratings": 4.9
-  }
+  },
+  {
+    "bookTitle": "বিলবোর্ড",
+    "bookCover": "https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/Billboard_-Sadat_Hossain_-f6fb3-459830.jpg",
+    "id": 10,
+    "ratings": 3
+},
+{
+    "bookTitle": "জ্যোৎস্নায় বর্ষার মেঘ",
+    "bookCover": "https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/Josnai_Borsar_Megh-Sabrina_Jahan_Shomi-5550b-459685.png",
+    "id": 11,
+    "ratings": 3
+},
+{
+    "bookTitle": "কীভাবে গড়বেন নেক সন্তান",
+    "bookCover": "https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/Kivabe_Gorben_Nek_Sontan-M_Badrul_Islam_Bin_Harun-944c2-459672.jpg",
+    "id": 12,
+    "ratings": 2
+},
+{
+    "bookTitle": "বাস্তবতার আয়নায়",
+    "bookCover": "https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/Bastobotar_Aynay-Shakir_Mahmud_Safat-889f4-459646.png",
+    "id": 13,
+    "ratings": 4
+},
+{
+    "bookTitle": "ফুটনোট",
+    "bookCover": "https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/Footnote-Roddur_Aritro-657d2-459541.jpg",
+    "id": 14,
+    "ratings": 4
+},
+{
+    "bookTitle": "নারীর শত্রু-মিত্র",
+    "bookCover": "https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/Narir_Shotru_Mitro_-Muhammod_Jainul_Abidin-cfcf7-459506.jpg",
+    "id": 15,
+    "ratings": 5
+},
+{
+    "bookTitle": "দু’আ-ই রসূল",
+    "bookCover": "https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/Dua_i_Rasul-Muslim_Bangla_Foundation-dbf73-459489.jpg",
+    "id": 16,
+    "ratings": 2
+},
+{
+    "bookTitle": "নিত্যদিন শত হাদীস",
+    "bookCover": "https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/Nittodin_Shoto_Hadis-Mohajatok_-32431-459425.jpg",
+    "id": 17,
+    "ratings": 3
+},
+{
+    "bookTitle": "ফ্রেশ স্টেশনারি ‘গল্পের খাতা’ ভলিউম-২",
+    "bookCover": "https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/Fresh_Stationery_Golper_Khata_Vol_2-Sahityodesh_-4f1e7-459149.jpg",
+    "id": 18,
+    "ratings": 5
+},
+{
+    "bookTitle": "স্কুল/মাদরাসা/হোম-স্কুলিং প্যাকেজ",
+    "bookCover": "https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/School_Madrasah_Home_Schooling_package-Jahid_Hasan-50d87-459104.jpg",
+    "id": 19,
+    "ratings": 2
+}
+  
 ]
