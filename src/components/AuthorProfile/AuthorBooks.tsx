@@ -31,12 +31,16 @@ const AuthorBooks: React.FC<AuthorBooksProps> = ({ writerName }) => {
   }, [writerName, books]);
 
   return (
-    <div className="container mx-auto px-6 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mt-6">
+
+    <div className="py-10">
+        <h1 className="text-2xl font-semibold text-green-500 text-center">Author's <span className="text-neutral">Books</span></h1>
+        <div className="container mx-auto px-6 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mt-6">
       {filteredBooks.length > 0 ? (
         filteredBooks.map((book) => <BookCard key={book.id} book={book} />)
       ) : (
         <p className="text-gray-600 col-span-full text-center">No books available for this author.</p>
       )}
+    </div>
     </div>
   );
 };
