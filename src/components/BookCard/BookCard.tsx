@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import Rating from "./Rating";
-// import PropTypes from "prop-types";
 import Marquee from "react-fast-marquee";
 
 interface Book {
@@ -58,13 +57,5 @@ const BookCard = ({ book }: { book: Book }) => {
     );
 };
 
-
-// BookCard.propTypes = {
-//     book: PropTypes.object.isRequired,
-//     writerName: PropTypes.string.isRequired,
-//     bookTitle: PropTypes.string.isRequired,
-//     ratings: PropTypes.number.isRequired,
-//     bookCover: PropTypes.string.isRequired
-// };
 
 export default BookCard;
