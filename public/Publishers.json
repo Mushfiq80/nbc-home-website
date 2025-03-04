@@ -1,0 +1,123 @@
+[
+    {
+      "id": 1,
+      "name": "ABC Publisher",
+      "tagLine": "Turning Pages, Inspiring Minds",
+      "email": "abc@gmail.com",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "thana": "Mirpur",
+      "shortDescription": "ABC is dedicated to bringing stories to life, empowering authors, and inspiring readers worldwide. We specialize in publishing engaging, high-quality books across genres.",
+      "longDescription": "A classic tale of life and struggles in a fishing village along the Padma River, capturing the essence of rural Bengal.",
+      "logo": "https://example.com/logos/abc_publisher.png"
+    },
+    {
+      "id": 2,
+      "name": "BoiBichitra Publications",
+      "tagLine": "Exploring Literature, One Book at a Time",
+      "email": "contact@boibichitra.com",
+      "division": "Dhaka",
+      "district": "Gazipur",
+      "thana": "Tongi",
+      "shortDescription": "BoiBichitra Publications is a leading name in Bangladeshi literature, publishing books that cater to readers of all ages and backgrounds.",
+      "longDescription": "Our publications cover a diverse range of genres, ensuring quality storytelling and educational content for all.",
+      "logo": "https://example.com/logos/boibichitra.png"
+    },
+    {
+      "id": 3,
+      "name": "NoboPoth Publications",
+      "tagLine": "A New Journey Through Books",
+      "email": "info@nobopoth.com",
+      "division": "Chattogram",
+      "district": "Chattogram",
+      "thana": "Panchlaish",
+      "shortDescription": "NoboPoth Publications strives to introduce fresh perspectives and new authors to Bangladeshi readers.",
+      "longDescription": "Our mission is to inspire curiosity and knowledge through books that push creative boundaries.",
+      "logo": "https://example.com/logos/nobopoth.png"
+    },
+    {
+      "id": 4,
+      "name": "OnnoRokom Publications",
+      "tagLine": "Books That Change Perspectives",
+      "email": "support@onnorokom.com",
+      "division": "Khulna",
+      "district": "Khulna",
+      "thana": "Sonadanga",
+      "shortDescription": "OnnoRokom Publications is known for its thought-provoking books that encourage critical thinking and innovation.",
+      "longDescription": "We publish a wide array of books, from science fiction to social studies, always aiming to provide new insights.",
+      "logo": "https://example.com/logos/onnorokom.png"
+    },
+    {
+      "id": 5,
+      "name": "Prothoma Prokashoni",
+      "tagLine": "Preserving Culture, One Book at a Time",
+      "email": "contact@prothoma.com",
+      "division": "Rajshahi",
+      "district": "Rajshahi",
+      "thana": "Boalia",
+      "shortDescription": "Prothoma Prokashoni is committed to preserving and promoting Bangladeshi culture through books that reflect our heritage.",
+      "longDescription": "Our publications focus on history, literature, and the arts, aiming to keep traditions alive for future generations.",
+      "logo": "https://example.com/logos/prothoma.png"
+    },
+    {
+      "id": 6,
+      "name": "Sheba Prokashoni",
+      "tagLine": "Adventure and Knowledge in Every Page",
+      "email": "admin@sheba.com",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "thana": "Motijheel",
+      "shortDescription": "Sheba Prokashoni is Bangladesh’s most beloved publisher of detective stories, adventures, and children's literature.",
+      "longDescription": "Our books have captivated generations, from Masud Rana thrillers to timeless fairy tales.",
+      "logo": "https://example.com/logos/sheba.png"
+    },
+    {
+      "id": 7,
+      "name": "Anannya Publications",
+      "tagLine": "Empowering Through Literature",
+      "email": "info@anannya.com",
+      "division": "Sylhet",
+      "district": "Sylhet",
+      "thana": "Dakshin Surma",
+      "shortDescription": "Anannya Publications focuses on empowering readers through literature that highlights important social issues.",
+      "longDescription": "Our books cover women's empowerment, education, and literature that challenges societal norms.",
+      "logo": "https://example.com/logos/anannya.png"
+    },
+    {
+      "id": 8,
+      "name": "Tamrolipi Publications",
+      "tagLine": "Modern Thinking, Classic Literature",
+      "email": "support@tamrolipi.com",
+      "division": "Rangpur",
+      "district": "Dinajpur",
+      "thana": "Dinajpur Sadar",
+      "shortDescription": "Tamrolipi Publications bridges the gap between classic and contemporary literature, catering to all readers.",
+      "longDescription": "We focus on both timeless classics and modern literature, creating a unique reading experience.",
+      "logo": "https://example.com/logos/tamrolipi.png"
+    },
+    {
+      "id": 9,
+      "name": "Pathak Shamabesh",
+      "tagLine": "For the Love of Books",
+      "email": "info@pathakshamabesh.com",
+      "division": "Barishal",
+      "district": "Barishal",
+      "thana": "Kotwali",
+      "shortDescription": "Pathak Shamabesh is dedicated to fostering a strong reading culture in Bangladesh through quality literature.",
+      "longDescription": "We curate a selection of books that include literary fiction, educational content, and translated works.",
+      "logo": "https://example.com/logos/pathakshamabesh.png"
+    },
+    {
+      "id": 10,
+      "name": "Bangla Academy Publications",
+      "tagLine": "Preserving the Bangla Language",
+      "email": "academy@banglaacademy.org",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "thana": "Shahbagh",
+      "shortDescription": "Bangla Academy Publications is the most authoritative publisher in Bangladesh, dedicated to linguistic and literary research.",
+      "longDescription": "We publish academic research, literary masterpieces, and government-approved textbooks to promote Bangla literature and culture.",
+      "logo": "https://example.com/logos/banglaacademy.png"
+    }
+  ]
+  

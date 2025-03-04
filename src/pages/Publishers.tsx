@@ -1,9 +1,13 @@
-
+import PublisherCard from "@/components/PublisherProfile/PublisherCard";
+import { useState } from "react";
 
 const Publishers = () => {
+
+    const [selectedPublisher, setSelectedWPublisher] = useState<string | null>(null);
+
     return (
         <div>
-           <h1>Publisher</h1>
+            <PublisherCard onSelectPublisher={setSelectedWPublisher}/>
         </div>
     );
 };
