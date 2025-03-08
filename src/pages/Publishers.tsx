@@ -1,3 +1,4 @@
+import AuthorBooks from "@/components/AuthorProfile/AuthorBooks";
 import PublisherCard from "@/components/PublisherProfile/PublisherCard";
 import { useState } from "react";
 
@@ -8,6 +9,7 @@ const Publishers = () => {
     return (
         <div>
             <PublisherCard onSelectPublisher={setSelectedWPublisher}/>
+            {selectedPublisher && <AuthorBooks writerName={selectedPublisher} />}
         </div>
     );
 };
