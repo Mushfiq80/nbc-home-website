@@ -22,7 +22,7 @@ const Nav = () => {
                 <NavLink to='/Authors'>Authors</NavLink>
             </li>
             <li>
-                <NavLink to='/contact'>Contact Us</NavLink>
+                <NavLink to='/company'>NBC Registration</NavLink>
             </li>
         </>
     )

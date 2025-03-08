@@ -9,6 +9,7 @@ import About from './pages/About';
 import Books from "./pages/Books";
 import Publishers from "./pages/Publishers";
 import Authors from "./pages/Authors";
+import NBCRegistration from "./pages/Company";
 // import NotFound from "./pages/NotFound"; // Optional: for 404 pages
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/books" element={<Books />} />  {/* All Books Page */}
         <Route path="/publishers" element={<Publishers />} />  {/* Publisher Page */}
         <Route path="/authors" element={<Authors />} />  {/* Publisher Page */}
+        <Route path="/company" element={<NBCRegistration />} />  {/* Company Info */}
         {/* <Route path="*" element={<NotFound />} />  404 Page */}
       </Routes>
       <Footer />
