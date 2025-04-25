@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Search, Star, Filter, ChevronDown, ChevronUp, X } from 'lucide-react';
 import { sampleBooks } from '@/lib/CatalogBooks';
 
