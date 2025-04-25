@@ -1,4 +1,3 @@
-// import BookCard from "../BookCard/BookCard";
 import { booksTitle } from "@/lib/Title";
 import BookCard from "../BookCard/BookCard";
 import { useEffect, useState } from "react";
@@ -13,9 +12,10 @@ const AllBooks = () => {
     }, []);
     return (
         <div className="py-10">
-            <h1 className="text-center text-2xl md:text-3xl lg:text-4xl py-6">{title.title1} <span className="text-green-500">{title.title2}</span>
+            <h1 className="text-center text-2xl md:text-3xl lg:text-4xl py-6">
+                {title.title1} <span className="text-green-500">{title.title2}</span>
             </h1>
-            <div className="container mx-auto px-6 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            <div className="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {
                     books.map((book, index) => (
                         <BookCard key={index} book={book} />
@@ -25,4 +25,5 @@ const AllBooks = () => {
         </div>
     );
 };
+
 export default AllBooks;
