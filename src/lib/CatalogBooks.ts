@@ -1,0 +1,297 @@
+export interface Book {
+  id: number;
+  title: string;
+  author: string;
+  coverImage: string;
+  year: number;
+  rating: number;
+  publisher: string;
+  isbn: string;
+  pages: number;
+  subject: string;
+  description: string;
+  country: "Bangladesh" | "India" | "Pakistan";
+}
+
+export const sampleBooks: Book[] = [
+  {
+    id: 1,
+    title: "A Golden Age",
+    author: "Tahmima Anam",
+    coverImage: "/api/placeholder/180/270",
+    year: 2007,
+    rating: 4.2,
+    publisher: "HarperCollins",
+    isbn: "978-0-06-147875-7",
+    pages: 288,
+    subject: "Historical Fiction",
+    description: "A story set during the Bangladesh Liberation War of 1971",
+    country: "Bangladesh"
+  },
+  {
+    id: 2,
+    title: "Lajja",
+    author: "Taslima Nasrin",
+    coverImage: "/api/placeholder/180/270",
+    year: 1993,
+    rating: 4.1,
+    publisher: "Penguin Books",
+    isbn: "978-0-14-024051-5",
+    pages: 216,
+    subject: "Fiction",
+    description: "A powerful novel about religious tensions in Bangladesh",
+    country: "Bangladesh"
+  },
+  {
+    id: 3,
+    title: "The Good Muslim",
+    author: "Tahmima Anam",
+    coverImage: "/api/placeholder/180/270",
+    year: 2011,
+    rating: 3.9,
+    publisher: "HarperCollins",
+    isbn: "978-0-06-147876-4",
+    pages: 304,
+    subject: "Historical Fiction",
+    description: "The aftermath of Bangladesh's war of independence",
+    country: "Bangladesh"
+  },
+  {
+    id: 4,
+    title: "Selected Poems",
+    author: "Kazi Nazrul Islam",
+    coverImage: "/api/placeholder/180/270",
+    year: 1999,
+    rating: 4.7,
+    publisher: "Bangla Academy",
+    isbn: "978-984-07-4254-8",
+    pages: 186,
+    subject: "Poetry",
+    description: "Collection of revolutionary poems by Bangladesh's national poet",
+    country: "Bangladesh"
+  },
+  {
+    id: 5,
+    title: "The Midnight's Children",
+    author: "Salman Rushdie",
+    coverImage: "/api/placeholder/180/270",
+    year: 1981,
+    rating: 4.3,
+    publisher: "Jonathan Cape",
+    isbn: "978-0-224-01823-0",
+    pages: 446,
+    subject: "Magical Realism",
+    description: "Children born at the midnight hour of India's independence",
+    country: "India"
+  },
+  {
+    id: 6,
+    title: "The God of Small Things",
+    author: "Arundhati Roy",
+    coverImage: "/api/placeholder/180/270",
+    year: 1997,
+    rating: 4.1,
+    publisher: "IndiaInk",
+    isbn: "978-0-679-45731-2",
+    pages: 340,
+    subject: "Fiction",
+    description: "A story about the childhood experiences of fraternal twins",
+    country: "India"
+  },
+  {
+    id: 7,
+    title: "A Suitable Boy",
+    author: "Vikram Seth",
+    coverImage: "/api/placeholder/180/270",
+    year: 1993,
+    rating: 4.4,
+    publisher: "Phoenix House",
+    isbn: "978-1-85799-943-8",
+    pages: 1488,
+    subject: "Fiction",
+    description: "A coming-of-age story set in post-independence India",
+    country: "India"
+  },
+  {
+    id: 8,
+    title: "The White Tiger",
+    author: "Aravind Adiga",
+    coverImage: "/api/placeholder/180/270",
+    year: 2008,
+    rating: 3.9,
+    publisher: "Free Press",
+    isbn: "978-1-4165-6259-7",
+    pages: 304,
+    subject: "Fiction",
+    description: "A tale of ambition and corruption in modern India",
+    country: "India"
+  },
+  {
+    id: 9,
+    title: "Train to Pakistan",
+    author: "Khushwant Singh",
+    coverImage: "/api/placeholder/180/270",
+    year: 1956,
+    rating: 4.2,
+    publisher: "Chatto & Windus",
+    isbn: "978-0-8070-5870-3",
+    pages: 192,
+    subject: "Historical Fiction",
+    description: "A novel about the Partition of India in 1947",
+    country: "India"
+  },
+  {
+    id: 10,
+    title: "Moth Smoke",
+    author: "Mohsin Hamid",
+    coverImage: "/api/placeholder/180/270",
+    year: 2000,
+    rating: 3.8,
+    publisher: "Farrar, Straus and Giroux",
+    isbn: "978-0-374-21354-2",
+    pages: 256,
+    subject: "Fiction",
+    description: "A tale of love, drugs, and class conflict in Lahore",
+    country: "Pakistan"
+  },
+  {
+    id: 11,
+    title: "The Reluctant Fundamentalist",
+    author: "Mohsin Hamid",
+    coverImage: "/api/placeholder/180/270",
+    year: 2007,
+    rating: 3.7,
+    publisher: "Hamish Hamilton",
+    isbn: "978-0-241-14365-2",
+    pages: 184,
+    subject: "Fiction",
+    description: "A Pakistani man's experience in America after 9/11",
+    country: "Pakistan"
+  },
+  {
+    id: 12,
+    title: "Ice Candy Man",
+    author: "Bapsi Sidhwa",
+    coverImage: "/api/placeholder/180/270",
+    year: 1988,
+    rating: 4.0,
+    publisher: "William Heinemann Ltd",
+    isbn: "978-0-434-70120-3",
+    pages: 278,
+    subject: "Historical Fiction",
+    description: "A story set during the Partition of India, seen through a child's eyes",
+    country: "Pakistan"
+  },
+  {
+    id: 13,
+    title: "The Shadow Lines",
+    author: "Amitav Ghosh",
+    coverImage: "/api/placeholder/180/270",
+    year: 1988,
+    rating: 4.3,
+    publisher: "Ravi Dayal Publishers",
+    isbn: "978-0-7011-3168-7",
+    pages: 246,
+    subject: "Fiction",
+    description: "A novel exploring borders and nationalism in the Indian subcontinent",
+    country: "India"
+  },
+  {
+    id: 14,
+    title: "River of Fire",
+    author: "Qurratulain Hyder",
+    coverImage: "/api/placeholder/180/270",
+    year: 1959,
+    rating: 4.4,
+    publisher: "New Directions",
+    isbn: "978-0-8112-1459-5",
+    pages: 428,
+    subject: "Historical Fiction",
+    description: "An epic tale spanning two thousand years of Indian history",
+    country: "India"
+  },
+  {
+    id: 15,
+    title: "Home Fire",
+    author: "Kamila Shamsie",
+    coverImage: "/api/placeholder/180/270",
+    year: 2017,
+    rating: 4.1,
+    publisher: "Riverhead Books",
+    isbn: "978-0-7352-1769-7",
+    pages: 288,
+    subject: "Fiction",
+    description: "A contemporary reimagining of Sophocles's Antigone",
+    country: "Pakistan"
+  },
+  {
+    id: 16,
+    title: "Season of the Rainbirds",
+    author: "Nadeem Aslam",
+    coverImage: "/api/placeholder/180/270",
+    year: 1993,
+    rating: 3.9,
+    publisher: "Andre Deutsch",
+    isbn: "978-0-233-98771-4",
+    pages: 192,
+    subject: "Fiction",
+    description: "A mysterious story set in a small Pakistani town",
+    country: "Pakistan"
+  },
+  {
+    id: 17,
+    title: "Interpreter of Maladies",
+    author: "Jhumpa Lahiri",
+    coverImage: "/api/placeholder/180/270",
+    year: 1999,
+    rating: 4.3,
+    publisher: "Mariner Books",
+    isbn: "978-0-395-92720-5",
+    pages: 198,
+    subject: "Short Stories",
+    description: "Stories about the lives of Indians and Indian Americans",
+    country: "India"
+  },
+  {
+    id: 18,
+    title: "Kartography",
+    author: "Kamila Shamsie",
+    coverImage: "/api/placeholder/180/270",
+    year: 2002,
+    rating: 4.0,
+    publisher: "Bloomsbury",
+    isbn: "978-0-7475-6155-6",
+    pages: 342,
+    subject: "Fiction",
+    description: "A love story set against the backdrop of Karachi's violence",
+    country: "Pakistan"
+  },
+  {
+    id: 19,
+    title: "The Boat People",
+    author: "Sharon Bala",
+    coverImage: "/api/placeholder/180/270",
+    year: 2018,
+    rating: 4.2,
+    publisher: "McClelland & Stewart",
+    isbn: "978-0-7710-2731-1",
+    pages: 352,
+    subject: "Fiction",
+    description: "A novel about Tamil refugees fleeing Sri Lanka and arriving in Canada",
+    country: "Bangladesh"
+  },
+  {
+    id: 20,
+    title: "The Association of Small Bombs",
+    author: "Karan Mahajan",
+    coverImage: "/api/placeholder/180/270",
+    year: 2016,
+    rating: 3.8,
+    publisher: "Viking",
+    isbn: "978-0-525-42963-9",
+    pages: 276,
+    subject: "Fiction",
+    description: "A novel examining the aftermath of a bomb in a Delhi marketplace",
+    country: "India"
+  }
+];

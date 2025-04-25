@@ -1,10 +1,10 @@
 import logo1 from "../../../public/Assets/logo-final 2.png";
 import logo2 from "../../../public/Assets/logo-final 1.png";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Nav = () => {
 
-    const links =(
+    const links = (
         <>
             <li>
                 <NavLink to='/'>Home</NavLink>
@@ -14,6 +14,9 @@ const Nav = () => {
             </li>
             <li>
                 <NavLink to='/Publishers'>Publisher</NavLink>
+            </li>
+            <li>
+                <NavLink to='/catalog'>Catalog</NavLink>
             </li>
             <li>
                 <NavLink to='/Books'>Books</NavLink>
@@ -51,8 +54,8 @@ const Nav = () => {
                     </ul>
                 </div>
                 <a href="/" className="flex items-center space-x-2">
-                <img className="w-1/4 lg:w-full" src={logo1} alt="" />
-                <img className="w-1/2 lg:w-full" src={logo2} alt="" />
+                    <img className="w-1/4 lg:w-full" src={logo1} alt="" />
+                    <img className="w-1/2 lg:w-full" src={logo2} alt="" />
                 </a>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -61,9 +64,10 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-2">
-                <button className="bg-slate-200 text-green-600 px-2 py-1 md:px-3 md:py-2 rounded-lg">Login</button>
-                <button className="bg-green-600 text-white px-2 py-1 md:px-3 md:py-2 rounded-lg">Sign up</button>
+                <Link to="/login" className="bg-slate-200 text-green-600 px-2 py-1 md:px-3 md:py-2 rounded-lg">Login</Link>
+                <Link to="/signup" className="bg-green-600 text-white px-2 py-1 md:px-3 md:py-2 rounded-lg">Sign up</Link>
             </div>
+
         </div>
     );
 };
