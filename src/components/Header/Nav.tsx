@@ -16,7 +16,7 @@ const Nav = () => {
                 <NavLink to='/Publishers'>Publisher</NavLink>
             </li>
             <li>
-                <NavLink to='/catalog'>Catalog</NavLink>
+                <NavLink to='/catalog'>Catalogue</NavLink>
             </li>
             <li>
                 <NavLink to='/Books'>Books</NavLink>
