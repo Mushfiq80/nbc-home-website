@@ -278,7 +278,7 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
 };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="layout px-4 py-8">
       <h1 className="text-3xl font-bold mb-8 text-center">Book Catalog</h1>
       
       {/* Search Bar */}

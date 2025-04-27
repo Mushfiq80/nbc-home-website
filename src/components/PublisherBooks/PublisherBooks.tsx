@@ -6,15 +6,16 @@ interface BookData {
   bookCover: string;
   writerName: string;
   bookTitle: string;
+  publisherName: string; // Added publisherName field
   ratings: number;
 }
 
-interface AuthorBooksProps {
-  writerName: string;
-  searchTerm?: string;
+interface PublisherBooksProps {
+  publisherName: string;
+  searchTerm: string;
 }
 
-const AuthorBooks: React.FC<AuthorBooksProps> = ({ writerName, searchTerm = "" }) => {
+const PublisherBooks: React.FC<PublisherBooksProps> = ({ publisherName, searchTerm }) => {
   const [books, setBooks] = useState<BookData[]>([]);
   const [filteredBooks, setFilteredBooks] = useState<BookData[]>([]);
   const [displayCount, setDisplayCount] = useState(9);
@@ -26,21 +27,24 @@ const AuthorBooks: React.FC<AuthorBooksProps> = ({ writerName, searchTerm = "" }
       .then((data) => setBooks(data));
   }, []);
 
-  // Filter books based on writer and search term
+  // Filter books based on publisher and search term
   useEffect(() => {
-    if (writerName) {
-      const writerBooks = books.filter((book) => book.writerName === writerName);
+    if (publisherName) {
+      const publisherBooks = books.filter(
+        (book) => book.publisherName === publisherName
+      );
       
       if (searchTerm) {
-        const searchResults = writerBooks.filter((book) =>
-          book.bookTitle.toLowerCase().includes(searchTerm.toLowerCase())
+        const searchResults = publisherBooks.filter((book) =>
+          book.bookTitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          book.writerName.toLowerCase().includes(searchTerm.toLowerCase())
         );
         setFilteredBooks(searchResults);
       } else {
-        setFilteredBooks(writerBooks);
+        setFilteredBooks(publisherBooks);
       }
     }
-  }, [writerName, books, searchTerm]);
+  }, [publisherName, books, searchTerm]);
 
   const handleLoadMore = () => {
     setDisplayCount(prev => prev + 9);
@@ -57,7 +61,7 @@ const AuthorBooks: React.FC<AuthorBooksProps> = ({ writerName, searchTerm = "" }
           <p className="text-gray-600 col-span-full text-center py-12 bg-gray-100 rounded-lg">
             {searchTerm 
               ? "No books match your search criteria." 
-              : "No books available for this author."}
+              : "No books available for this publisher."}
           </p>
         )}
       </div>
@@ -76,4 +80,4 @@ const AuthorBooks: React.FC<AuthorBooksProps> = ({ writerName, searchTerm = "" }
   );
 };
 
-export default AuthorBooks;
+export default PublisherBooks;

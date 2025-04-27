@@ -11,7 +11,7 @@ import StatInfo from "@/components/StatInfo/StatInfo";
 
 const Home = () => {
     return (
-        <div>
+        <div className="layout">
             <Hero></Hero>
             <Publishers></Publishers>
             <ShowCase></ShowCase>

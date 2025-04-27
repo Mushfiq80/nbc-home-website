@@ -8,6 +8,11 @@ body {
   font-style: normal;
 }
 
+.layout {
+  @apply w-[90%] max-w-[1200px] mx-auto;
+}
+
+
 
 @layer base {
   :root {

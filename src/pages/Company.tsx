@@ -48,7 +48,7 @@ export default function NBCRegistration() {
 
   return (
     <>
-      <div className="p-6 flex flex-col md:flex-row gap-6">
+      <div className="layout py-6 flex flex-col md:flex-row gap-6">
         {/* Left Form Section */}
         <div className="w-full md:w-2/3">
           <Card>

@@ -3,7 +3,7 @@ import SearchFields from "@/components/SearchFields/SearchFields";
 
 const Books = () => {
     return (
-        <div className="p-6">
+        <div className="layout py-6">
             <SearchFields />
             <AllBooks />
 

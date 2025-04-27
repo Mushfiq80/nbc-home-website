@@ -8,7 +8,7 @@ import Officers from "@/components/Officers/Officers";
 
 const About = () => {
     return (
-        <div className="">
+        <div className="layout">
             <AboutHero />
             <AboutMap />
             <AboutMission />
