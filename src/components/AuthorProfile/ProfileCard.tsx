@@ -29,17 +29,17 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ onSelectWriter, defaultSelect
   useEffect(() => {
     fetch("/Author.json")
       .then((response) => response.json())
-      .then((data) => {
+      .then((data: ProfileData[]) => {
         setProfiles(data);
-        
-        // Handle default selection if provided
+      
         if (defaultSelected && data.length > 0) {
-          const defaultProfile = data.find(p => p.name === defaultSelected);
+          const defaultProfile = data.find((p) => p.name === defaultSelected);
           if (defaultProfile) {
             setSelectedProfile(defaultProfile);
           }
         }
-      });
+      })
+      ;
   }, [defaultSelected]);
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
