@@ -2,7 +2,7 @@ export const titles = [
   {
     // 0
     title1: "We're here to ensure your success by",
-    title2: "Connecting Books and Readers",
+    title2: "Bangladeshi books beyond boundaries",
   },
   {
     // 1
@@ -23,9 +23,9 @@ export const titles = [
 
 export const mission = [
   {
-    title: "Unmatched service",
+    title: "Service",
     description:
-      "Support corporate clients and financial investors with their growth strategy and international development.",
+      "To provide information about Bangladeshi books to the stakeholders worldwide",
   },
   {
     title: "Specific",
@@ -47,7 +47,7 @@ export const commitments = [
   {
     title: "Ethics",
     description:
-      "Ethics for ConsultUs means ensuring our customers the confidentiality and uniqueness of the service they are provided. A client must be reassured by the fact that the service provided to them is made-to-measure and will not be recycled for their competitors.",
+      "We want to promote the best published Bangladeshi book throughout the world through the promotion we encouraging the publishing industry.",
   },
   {
     title: "Quality",
@@ -61,9 +61,7 @@ export const commitments = [
   },
 ];
 
-
 export const booksTitle = {
   title1: "Search",
   title2: "Books",
 };
-

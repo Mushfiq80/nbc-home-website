@@ -1,24 +1,9 @@
-import { useState, useEffect } from 'react';
-import { Search, Star, Filter, ChevronDown, ChevronUp, X } from 'lucide-react';
-import { sampleBooks } from '@/lib/CatalogBooks';
+import { sampleBooks } from "@/lib/CatalogBooks";
+import { ChevronDown, ChevronUp, Filter, Search, Star, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 // Subject options
-const subjectOptions = [
-  "All", 
-  "Fiction", 
-  "Non-Fiction", 
-  "Poetry", 
-  "Drama", 
-  "Mystery", 
-  "Science Fiction", 
-  "Fantasy", 
-  "Biography", 
-  "History", 
-  "Self-Help", 
-  "Spiritual", 
-  "Health", 
-  "Business"
-];
+const subjectOptions = ["All", "Fiction", "Non-Fiction", "Translated"];
 
 // Year range options
 const yearOptions = [
@@ -28,17 +13,24 @@ const yearOptions = [
   "2015-2019",
   "2010-2014",
   "2000-2009",
-  "Before 2000"
+  "Before 2000",
 ];
 
 // Rating options
 const ratingOptions = [
   "All",
-  "5 stars",
-  "4+ stars",
-  "3+ stars",
-  "2+ stars",
-  "1+ star"
+  "Eng to Bng",
+  "Bng to Eng",
+  "Drama",
+  "Mystery",
+  "Science Fiction",
+  "Fantasy",
+  "Biography",
+  "History",
+  "Self-Help",
+  "Spiritual",
+  "Health",
+  "Business",
 ];
 
 export default function BookCatalog() {
@@ -50,22 +42,27 @@ export default function BookCatalog() {
   const [author, setAuthor] = useState("");
   const [orderBy, setOrderBy] = useState("Featured");
   const [showMobileFilters, setShowMobileFilters] = useState(false);
-  
+
   // For filtered books
   const [filteredBooks, setFilteredBooks] = useState(sampleBooks);
-  
+
   // For dropdown suggestions
   const [authorSuggestions, setAuthorSuggestions] = useState<string[]>([]);
-  const [publisherSuggestions, setPublisherSuggestions] = useState<string[]>([]);
+  const [publisherSuggestions, setPublisherSuggestions] = useState<string[]>(
+    []
+  );
   const [showAuthorSuggestions, setShowAuthorSuggestions] = useState(false);
-  const [showPublisherSuggestions, setShowPublisherSuggestions] = useState(false);
-  
+  const [showPublisherSuggestions, setShowPublisherSuggestions] =
+    useState(false);
+
   // To track if any filter is active
   const [hasActiveFilters, setHasActiveFilters] = useState(false);
-  
+
   // Extract unique authors and publishers
-  const uniqueAuthors = [...new Set(sampleBooks.map(book => book.author))];
-  const uniquePublishers = [...new Set(sampleBooks.map(book => book.publisher))];
+  const uniqueAuthors = [...new Set(sampleBooks.map((book) => book.author))];
+  const uniquePublishers = [
+    ...new Set(sampleBooks.map((book) => book.publisher)),
+  ];
 
   const toggleMobileFilters = () => {
     setShowMobileFilters(!showMobileFilters);
@@ -75,7 +72,7 @@ export default function BookCatalog() {
   const handleSearch = () => {
     applyFilters();
   };
-  
+
   // Clear all filters
   const clearAllFilters = () => {
     setSearchTerm("");
@@ -91,83 +88,94 @@ export default function BookCatalog() {
 
   // Check if any filters are active
   useEffect(() => {
-    const isActive = 
-      searchTerm !== "" || 
-      subject !== "All" || 
-      year !== "All" || 
-      rating !== "All" || 
-      publisher !== "" || 
+    const isActive =
+      searchTerm !== "" ||
+      subject !== "All" ||
+      year !== "All" ||
+      rating !== "All" ||
+      publisher !== "" ||
       author !== "";
-    
+
     setHasActiveFilters(isActive);
   }, [searchTerm, subject, year, rating, publisher, author]);
 
   // Filter books based on all criteria
   const applyFilters = () => {
     let results = [...sampleBooks];
-    
+
     // Search term filter
     if (searchTerm) {
       const term = searchTerm.toLowerCase();
-      results = results.filter(book => 
-        book.title.toLowerCase().includes(term) || 
-        book.author.toLowerCase().includes(term) || 
-        book.isbn.toLowerCase().includes(term) ||
-        book.description.toLowerCase().includes(term)
+      results = results.filter(
+        (book) =>
+          book.title.toLowerCase().includes(term) ||
+          book.author.toLowerCase().includes(term) ||
+          book.isbn.toLowerCase().includes(term) ||
+          book.description.toLowerCase().includes(term)
       );
     }
-    
+
     // Subject filter
     if (subject !== "All") {
-      results = results.filter(book => book.subject === subject);
+      results = results.filter((book) => book.subject === subject);
     }
-    
+
     // Author filter
     if (author) {
-      results = results.filter(book => 
+      results = results.filter((book) =>
         book.author.toLowerCase().includes(author.toLowerCase())
       );
     }
-    
+
     // Publisher filter
     if (publisher) {
-      results = results.filter(book => 
+      results = results.filter((book) =>
         book.publisher.toLowerCase().includes(publisher.toLowerCase())
       );
     }
-    
+
     // Year filter
     if (year !== "All") {
       if (year === "2023-2025") {
-        results = results.filter(book => book.year >= 2023 && book.year <= 2025);
+        results = results.filter(
+          (book) => book.year >= 2023 && book.year <= 2025
+        );
       } else if (year === "2020-2022") {
-        results = results.filter(book => book.year >= 2020 && book.year <= 2022);
+        results = results.filter(
+          (book) => book.year >= 2020 && book.year <= 2022
+        );
       } else if (year === "2015-2019") {
-        results = results.filter(book => book.year >= 2015 && book.year <= 2019);
+        results = results.filter(
+          (book) => book.year >= 2015 && book.year <= 2019
+        );
       } else if (year === "2010-2014") {
-        results = results.filter(book => book.year >= 2010 && book.year <= 2014);
+        results = results.filter(
+          (book) => book.year >= 2010 && book.year <= 2014
+        );
       } else if (year === "2000-2009") {
-        results = results.filter(book => book.year >= 2000 && book.year <= 2009);
+        results = results.filter(
+          (book) => book.year >= 2000 && book.year <= 2009
+        );
       } else if (year === "Before 2000") {
-        results = results.filter(book => book.year < 2000);
+        results = results.filter((book) => book.year < 2000);
       }
     }
-    
+
     // Rating filter
     if (rating !== "All") {
       if (rating === "5 stars") {
-        results = results.filter(book => book.rating === 5);
+        results = results.filter((book) => book.rating === 5);
       } else if (rating === "4+ stars") {
-        results = results.filter(book => book.rating >= 4);
+        results = results.filter((book) => book.rating >= 4);
       } else if (rating === "3+ stars") {
-        results = results.filter(book => book.rating >= 3);
+        results = results.filter((book) => book.rating >= 3);
       } else if (rating === "2+ stars") {
-        results = results.filter(book => book.rating >= 2);
+        results = results.filter((book) => book.rating >= 2);
       } else if (rating === "1+ star") {
-        results = results.filter(book => book.rating >= 1);
+        results = results.filter((book) => book.rating >= 1);
       }
     }
-    
+
     // Sort results
     switch (orderBy) {
       case "Title A-Z":
@@ -192,95 +200,101 @@ export default function BookCatalog() {
         // No sorting for featured (using default order)
         break;
     }
-    
+
     setFilteredBooks(results);
   };
-  
-  // Generate author suggestions based on input
-interface AuthorChangeProps {
-    value: string;
-}
 
-const handleAuthorChange = (value: AuthorChangeProps['value']): void => {
+  // Generate author suggestions based on input
+  interface AuthorChangeProps {
+    value: string;
+  }
+
+  const handleAuthorChange = (value: AuthorChangeProps["value"]): void => {
     setAuthor(value);
     if (value.trim()) {
-        const filteredAuthors: string[] = uniqueAuthors.filter((a: string) => 
-            a.toLowerCase().includes(value.toLowerCase())
-        );
-        setAuthorSuggestions(filteredAuthors);
-        setShowAuthorSuggestions(true);
+      const filteredAuthors: string[] = uniqueAuthors.filter((a: string) =>
+        a.toLowerCase().includes(value.toLowerCase())
+      );
+      setAuthorSuggestions(filteredAuthors);
+      setShowAuthorSuggestions(true);
     } else {
-        setAuthorSuggestions([]);
-        setShowAuthorSuggestions(false);
+      setAuthorSuggestions([]);
+      setShowAuthorSuggestions(false);
     }
-};
-  
-  // Generate publisher suggestions based on input
-interface PublisherChangeProps {
-    value: string;
-}
+  };
 
-const handlePublisherChange = (value: PublisherChangeProps['value']): void => {
+  // Generate publisher suggestions based on input
+  interface PublisherChangeProps {
+    value: string;
+  }
+
+  const handlePublisherChange = (
+    value: PublisherChangeProps["value"]
+  ): void => {
     setPublisher(value);
     if (value.trim()) {
-        const filteredPublishers: string[] = uniquePublishers.filter((p: string) => 
-            p.toLowerCase().includes(value.toLowerCase())
-        );
-        setPublisherSuggestions(filteredPublishers);
-        setShowPublisherSuggestions(true);
+      const filteredPublishers: string[] = uniquePublishers.filter(
+        (p: string) => p.toLowerCase().includes(value.toLowerCase())
+      );
+      setPublisherSuggestions(filteredPublishers);
+      setShowPublisherSuggestions(true);
     } else {
-        setPublisherSuggestions([]);
-        setShowPublisherSuggestions(false);
+      setPublisherSuggestions([]);
+      setShowPublisherSuggestions(false);
     }
-};
-  
+  };
+
   // Apply filters whenever any filter changes
   useEffect(() => {
     applyFilters();
   }, [subject, year, rating, orderBy]);
 
   // Function to render star ratings
-interface RenderStarsProps {
+  interface RenderStarsProps {
     rating: number;
-}
+  }
 
-const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
+  const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
     const stars: JSX.Element[] = [];
     const fullStars: number = Math.floor(rating);
     const hasHalfStar: boolean = rating % 1 >= 0.5;
-    
+
     for (let i = 0; i < fullStars; i++) {
-        stars.push(<Star key={`full-${i}`} size={14} fill="#FFD700" color="#FFD700" />);
+      stars.push(
+        <Star key={`full-${i}`} size={14} fill="#FFD700" color="#FFD700" />
+      );
     }
-    
+
     if (hasHalfStar) {
-        stars.push(
-            <div key="half" className="relative w-3.5 h-3.5">
-                <Star size={14} className="absolute text-gray-300" />
-                <div className="absolute overflow-hidden w-1/2">
-                    <Star size={14} fill="#FFD700" color="#FFD700" />
-                </div>
-            </div>
-        );
+      stars.push(
+        <div key="half" className="relative w-3.5 h-3.5">
+          <Star size={14} className="absolute text-gray-300" />
+          <div className="absolute overflow-hidden w-1/2">
+            <Star size={14} fill="#FFD700" color="#FFD700" />
+          </div>
+        </div>
+      );
     }
-    
+
     const remainingStars: number = 5 - fullStars - (hasHalfStar ? 1 : 0);
     for (let i = 0; i < remainingStars; i++) {
-        stars.push(<Star key={`empty-${i}`} size={14} className="text-gray-300" />);
+      stars.push(
+        <Star key={`empty-${i}`} size={14} className="text-gray-300" />
+      );
     }
-    
+
     return (
-        <div className="flex items-center">
-            {stars}
-            <span className="ml-1 text-sm">{rating.toFixed(1)}</span>
-        </div>
+      <div className="flex items-center">
+        {stars}
+        <span className="ml-1 text-sm">{rating.toFixed(1)}</span>
+      </div>
     );
-};
+  };
 
   return (
     <div className="layout px-4 py-8">
       <h1 className="text-3xl font-bold mb-8 text-center">Book Catalogue</h1>
-      
+
       {/* Search Bar */}
       <div className="mb-6">
         <div className="flex">
@@ -291,13 +305,13 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
               className="w-full p-3 pl-10 border rounded-l focus:outline-none focus:ring-1 focus:ring-green-500"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+              onKeyPress={(e) => e.key === "Enter" && handleSearch()}
             />
             <div className="absolute left-3 top-3 text-gray-400">
               <Search size={20} />
             </div>
             {searchTerm && (
-              <button 
+              <button
                 className="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
                 onClick={() => setSearchTerm("")}
               >
@@ -305,7 +319,7 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
               </button>
             )}
           </div>
-          <button 
+          <button
             className="bg-green-500 text-white px-6 py-3 rounded-r hover:bg-green-600 transition"
             onClick={handleSearch}
           >
@@ -313,10 +327,10 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
           </button>
         </div>
       </div>
-      
+
       {/* Mobile Filter Toggle */}
       <div className="md:hidden mb-4">
-        <button 
+        <button
           onClick={toggleMobileFilters}
           className="w-full flex justify-between items-center bg-gray-100 p-3 rounded"
         >
@@ -324,27 +338,53 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
             <Filter size={18} className="mr-2" />
             <span>Filters</span>
           </div>
-          {showMobileFilters ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+          {showMobileFilters ? (
+            <ChevronUp size={18} />
+          ) : (
+            <ChevronDown size={18} />
+          )}
         </button>
       </div>
-      
+
       {/* Filters Section */}
-      <div className={`md:block ${showMobileFilters ? 'block' : 'hidden'} mb-8`}>
+      <div
+        className={`md:block ${showMobileFilters ? "block" : "hidden"} mb-8`}
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
           {/* Subject Filter */}
           <div>
             <label className="block text-sm font-medium mb-2">Subject:</label>
-            <select 
+            <select
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
               className="w-full p-2 border rounded focus:outline-none focus:ring-1 focus:ring-green-500"
             >
-              {subjectOptions.map(option => (
-                <option key={option} value={option}>{option}</option>
+              {subjectOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
               ))}
             </select>
           </div>
-          
+
+          {/* Rating Filter */}
+          <div>
+            <label className="block text-sm font-medium mb-2">
+              Subcategory:
+            </label>
+            <select
+              value={rating}
+              onChange={(e) => setRating(e.target.value)}
+              className="w-full p-2 border rounded focus:outline-none focus:ring-1 focus:ring-green-500"
+            >
+              {ratingOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+
           {/* Author Filter with Suggestions */}
           <div className="relative">
             <label className="block text-sm font-medium mb-2">Author:</label>
@@ -356,10 +396,12 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
                 value={author}
                 onChange={(e) => handleAuthorChange(e.target.value)}
                 onFocus={() => author && setShowAuthorSuggestions(true)}
-                onBlur={() => setTimeout(() => setShowAuthorSuggestions(false), 200)}
+                onBlur={() =>
+                  setTimeout(() => setShowAuthorSuggestions(false), 200)
+                }
               />
               {author && (
-                <button 
+                <button
                   className="absolute right-2 top-2 text-gray-400 hover:text-gray-600"
                   onClick={() => setAuthor("")}
                 >
@@ -370,8 +412,8 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
             {showAuthorSuggestions && authorSuggestions.length > 0 && (
               <div className="absolute z-10 bg-white w-full mt-1 border rounded shadow-lg max-h-40 overflow-y-auto">
                 {authorSuggestions.map((suggestion, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="p-2 hover:bg-gray-100 cursor-pointer"
                     onClick={() => {
                       setAuthor(suggestion);
@@ -384,21 +426,23 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
               </div>
             )}
           </div>
-          
+
           {/* Year Filter */}
           <div>
             <label className="block text-sm font-medium mb-2">Year:</label>
-            <select 
+            <select
               value={year}
               onChange={(e) => setYear(e.target.value)}
               className="w-full p-2 border rounded focus:outline-none focus:ring-1 focus:ring-green-500"
             >
-              {yearOptions.map(option => (
-                <option key={option} value={option}>{option}</option>
+              {yearOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
               ))}
             </select>
           </div>
-          
+
           {/* Publisher Filter with Suggestions */}
           <div className="relative">
             <label className="block text-sm font-medium mb-2">Publisher:</label>
@@ -410,10 +454,12 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
                 value={publisher}
                 onChange={(e) => handlePublisherChange(e.target.value)}
                 onFocus={() => publisher && setShowPublisherSuggestions(true)}
-                onBlur={() => setTimeout(() => setShowPublisherSuggestions(false), 200)}
+                onBlur={() =>
+                  setTimeout(() => setShowPublisherSuggestions(false), 200)
+                }
               />
               {publisher && (
-                <button 
+                <button
                   className="absolute right-2 top-2 text-gray-400 hover:text-gray-600"
                   onClick={() => setPublisher("")}
                 >
@@ -424,8 +470,8 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
             {showPublisherSuggestions && publisherSuggestions.length > 0 && (
               <div className="absolute z-10 bg-white w-full mt-1 border rounded shadow-lg max-h-40 overflow-y-auto">
                 {publisherSuggestions.map((suggestion, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="p-2 hover:bg-gray-100 cursor-pointer"
                     onClick={() => {
                       setPublisher(suggestion);
@@ -438,25 +484,11 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
               </div>
             )}
           </div>
-          
-          {/* Rating Filter */}
-          <div>
-            <label className="block text-sm font-medium mb-2">Rating:</label>
-            <select 
-              value={rating}
-              onChange={(e) => setRating(e.target.value)}
-              className="w-full p-2 border rounded focus:outline-none focus:ring-1 focus:ring-green-500"
-            >
-              {ratingOptions.map(option => (
-                <option key={option} value={option}>{option}</option>
-              ))}
-            </select>
-          </div>
-          
+
           {/* Order By Filter */}
           <div>
             <label className="block text-sm font-medium mb-2">Order By:</label>
-            <select 
+            <select
               value={orderBy}
               onChange={(e) => setOrderBy(e.target.value)}
               className="w-full p-2 border rounded focus:outline-none focus:ring-1 focus:ring-green-500"
@@ -471,18 +503,18 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
             </select>
           </div>
         </div>
-        
+
         {/* Buttons Row */}
         <div className="mt-4 flex flex-wrap gap-2">
-          <button 
+          <button
             onClick={handleSearch}
             className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition"
           >
             Apply Filters
           </button>
-          
+
           {hasActiveFilters && (
-            <button 
+            <button
               onClick={clearAllFilters}
               className="bg-white border border-green-600 text-green-600 px-6 py-2 rounded hover:bg-green-50 transition flex items-center"
             >
@@ -491,17 +523,17 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
           )}
         </div>
       </div>
-      
+
       {/* Active Filters Display */}
       {hasActiveFilters && (
         <div className="mb-4">
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-sm text-gray-600">Active filters:</span>
-            
+
             {subject !== "All" && (
               <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full flex items-center">
                 Subject: {subject}
-                <button 
+                <button
                   className="ml-1 text-green-800 hover:text-green-900"
                   onClick={() => setSubject("All")}
                 >
@@ -509,11 +541,11 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
                 </button>
               </span>
             )}
-            
+
             {year !== "All" && (
               <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full flex items-center">
                 Year: {year}
-                <button 
+                <button
                   className="ml-1 text-green-800 hover:text-green-900"
                   onClick={() => setYear("All")}
                 >
@@ -521,11 +553,11 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
                 </button>
               </span>
             )}
-            
+
             {rating !== "All" && (
               <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full flex items-center">
                 Rating: {rating}
-                <button 
+                <button
                   className="ml-1 text-green-800 hover:text-green-900"
                   onClick={() => setRating("All")}
                 >
@@ -533,11 +565,11 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
                 </button>
               </span>
             )}
-            
+
             {author && (
               <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full flex items-center">
                 Author: {author}
-                <button 
+                <button
                   className="ml-1 text-green-800 hover:text-green-900"
                   onClick={() => setAuthor("")}
                 >
@@ -545,11 +577,11 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
                 </button>
               </span>
             )}
-            
+
             {publisher && (
               <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full flex items-center">
                 Publisher: {publisher}
-                <button 
+                <button
                   className="ml-1 text-green-800 hover:text-green-900"
                   onClick={() => setPublisher("")}
                 >
@@ -557,11 +589,11 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
                 </button>
               </span>
             )}
-            
+
             {searchTerm && (
               <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full flex items-center">
                 Search: "{searchTerm}"
-                <button 
+                <button
                   className="ml-1 text-green-800 hover:text-green-900"
                   onClick={() => setSearchTerm("")}
                 >
@@ -569,8 +601,8 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
                 </button>
               </span>
             )}
-            
-            <button 
+
+            <button
               onClick={clearAllFilters}
               className="text-green-600 text-xs hover:text-green-800 flex items-center ml-2"
             >
@@ -579,20 +611,26 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
           </div>
         </div>
       )}
-      
+
       {/* Results heading */}
       <div className="flex justify-between items-center mb-4 border-b pb-2">
         <h2 className="text-xl font-semibold">
-          <span className="text-green-500">Books</span> (ordered by {orderBy.toLowerCase()})
+          <span className="text-green-500">Books</span> (ordered by{" "}
+          {orderBy.toLowerCase()})
         </h2>
-        <span className="text-sm text-gray-500">{filteredBooks.length} results</span>
+        <span className="text-sm text-gray-500">
+          {filteredBooks.length} results
+        </span>
       </div>
-      
+
       {/* Book List */}
       {filteredBooks.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 mb-8">
-          {filteredBooks.map(book => (
-            <div key={book.id} className="flex border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+          {filteredBooks.map((book) => (
+            <div
+              key={book.id}
+              className="flex border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
+            >
               {/* Book Cover */}
               <div className="w-1/3 md:w-1/4 bg-gray-100 flex items-center justify-center">
                 <img
@@ -601,12 +639,14 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
                   className="object-cover h-full w-full"
                 />
               </div>
-              
+
               {/* Book Details */}
               <div className="w-2/3 md:w-3/4 p-4">
-                <h3 className="font-bold text-lg mb-1 text-gray-800">{book.title}</h3>
+                <h3 className="font-bold text-lg mb-1 text-gray-800">
+                  {book.title}
+                </h3>
                 <p className="text-sm text-gray-600 mb-2">by {book.author}</p>
-                
+
                 <div className="flex flex-wrap gap-y-2">
                   <div className="w-full sm:w-1/2">
                     <div className="mb-1 flex items-center">
@@ -617,9 +657,11 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
                     {book.year} • {book.pages} pages
                   </div>
                 </div>
-                
-                <p className="text-sm text-gray-700 mt-2 line-clamp-2">{book.description}</p>
-                
+
+                <p className="text-sm text-gray-700 mt-2 line-clamp-2">
+                  {book.description}
+                </p>
+
                 <div className="mt-3 flex flex-wrap gap-2">
                   <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">
                     {book.subject}
@@ -628,7 +670,7 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
                     ISBN: {book.isbn}
                   </span>
                 </div>
-                
+
                 <div className="mt-3 flex space-x-2">
                   <button className="bg-green-500 text-white text-sm px-4 py-1 rounded hover:bg-green-600 transition">
                     View Details
@@ -643,9 +685,13 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
         </div>
       ) : (
         <div className="text-center py-10">
-          <div className="text-lg text-gray-600 mb-2">No books match your search criteria</div>
-          <p className="text-gray-500">Try adjusting your filters or search term</p>
-          <button 
+          <div className="text-lg text-gray-600 mb-2">
+            No books match your search criteria
+          </div>
+          <p className="text-gray-500">
+            Try adjusting your filters or search term
+          </p>
+          <button
             onClick={clearAllFilters}
             className="mt-4 bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 transition"
           >
@@ -653,17 +699,31 @@ const renderStars = ({ rating }: RenderStarsProps): JSX.Element => {
           </button>
         </div>
       )}
-      
+
       {/* Pagination - only show if we have results */}
       {filteredBooks.length > 0 && (
         <div className="flex justify-center space-x-1">
-          <button className="px-4 py-2 bg-green-500 text-white rounded">1</button>
-          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">2</button>
-          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">3</button>
-          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">4</button>
-          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">5</button>
-          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">...</button>
-          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Next »</button>
+          <button className="px-4 py-2 bg-green-500 text-white rounded">
+            1
+          </button>
+          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
+            2
+          </button>
+          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
+            3
+          </button>
+          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
+            4
+          </button>
+          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
+            5
+          </button>
+          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
+            ...
+          </button>
+          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
+            Next »
+          </button>
         </div>
       )}
     </div>
