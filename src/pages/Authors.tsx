@@ -1,73 +1,76 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ProfileCard from "@/components/AuthorProfile/ProfileCard";
 import AuthorBooks from "@/components/AuthorProfile/AuthorBooks";
+import { sampleAuthors } from "@/lib/Author";
+import { Search, BookOpen } from "lucide-react";
 
 const Authors = () => {
-  const [selectedWriter, setSelectedWriter] = useState<string | null>(null);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  // Get a random author for initial load
+  const getRandomAuthor = () => {
+    const randomIndex = Math.floor(Math.random() * sampleAuthors.length);
+    return sampleAuthors[randomIndex];
+  };
 
-  // Load a default author when the component mounts
-  useEffect(() => {
-    // Fetch authors and set a default one
-    fetch("/Author.json")
-      .then((response) => response.json())
-      .then((data) => {
-        if (data && data.length > 0) {
-          // Select the first author as default
-          setSelectedWriter(data[0].name);
-        }
-        setIsLoading(false);
-      })
-      .catch(error => {
-        console.error("Error loading authors:", error);
-        setIsLoading(false);
-      });
-  }, []);
+  const [selectedWriter, setSelectedWriter] = useState(getRandomAuthor());
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <div className="layout px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8 text-green-600">
-        Book <span className="text-neutral-800">Authors</span>
-      </h1>
-      
-      {isLoading ? (
-        <div className="flex justify-center py-12">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-green-500"></div>
+    <div className="bg-gray-50 min-h-screen pb-12">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-b from-green-600 to-green-700 text-white py-12 mb-8 shadow-md">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center text-center">
+            <BookOpen size={48} className="mb-4" />
+            <h1 className="text-4xl font-bold">
+              Book <span className="text-green-200">Authors</span>
+            </h1>
+            <p className="mt-2 text-green-100 max-w-xl">
+              Explore our collection of renowned authors and their literary works
+            </p>
+          </div>
         </div>
-      ) : (
-        <>
+      </div>
+
+      <div className="container mx-auto px-4">
+        {/* Author Profile Card */}
+        <div className="mb-12">
           <ProfileCard 
+            authors={sampleAuthors}
             onSelectWriter={setSelectedWriter} 
-            defaultSelected={selectedWriter}
+            selectedWriter={selectedWriter}
           />
-          
-          {selectedWriter && (
-            <>
-              <div className="mt-8 mb-4">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                  <h2 className="text-2xl font-semibold text-green-600">
-                    Books by <span className="text-neutral-800">{selectedWriter}</span>
-                  </h2>
-                  <div className="w-full md:w-64">
-                    <input
-                      type="text"
-                      placeholder="Search books..."
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-                  </div>
-                </div>
+        </div>
+
+        {/* Books Section */}
+        {selectedWriter && (
+          <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
+              <div className="flex items-center gap-2">
+                <BookOpen size={24} className="text-green-600" />
+                <h2 className="text-2xl font-bold">
+                  <span className="text-green-600">Books by</span> {selectedWriter.name}
+                </h2>
               </div>
-              <AuthorBooks 
-                writerName={selectedWriter} 
-                searchTerm={searchTerm}
-              />
-            </>
-          )}
-        </>
-      )}
+              
+              <div className="w-full md:w-64 relative">
+                <input
+                  type="text"
+                  placeholder="Search books..."
+                  className="w-full px-4 py-3 pl-10 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                <Search size={18} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              </div>
+            </div>
+            
+            <AuthorBooks 
+              writerName={selectedWriter.name} 
+              searchTerm={searchTerm}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
