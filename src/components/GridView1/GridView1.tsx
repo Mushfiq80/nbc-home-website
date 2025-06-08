@@ -1,33 +1,23 @@
-import { useEffect, useState } from "react";
+import { sampleBooks } from "@/lib/CatalogBooks";
 import BookCarousel from "../BookCarousel/BookCarousel";
 
 const GridView1 = () => {
-  interface Book {
-    id: number;
-    writerName: string;
-    bookTitle: string;
-    ratings: number;
-    bookCover: string;
-  }
-
-  const [books, setBooks] = useState<Book[]>([]);
-
-  useEffect(() => {
-    fetch("Books.json")
-      .then((response) => response.json())
-      .then((data) => setBooks(data));
-  }, []);
+  // Filter fiction books from the catalog
+  const fictionBooks = sampleBooks.filter(book => book.subject === "Fiction");
 
   return (
-    <div className="text-center mt-10">
-      <h1 className="text-3xl font-semibold">
-        <span className="text-green-600 ">Fiction</span> Books
-      </h1>
-      <p>
-        Explore a world of imagination and storytelling <br />with our collection of
-        fiction books
-      </p>
-      <BookCarousel books={books} />
+    <div className="py-16 bg-gradient-to-br from-background via-secondary/10 to-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <span className="text-primary">Fiction</span> Books
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Explore a world of imagination and storytelling with our collection of fiction books
+          </p>
+        </div>
+        <BookCarousel books={fictionBooks} />
+      </div>
     </div>
   );
 };
