@@ -1,61 +1,70 @@
-import { useEffect, useRef, useState } from "react";
-import Rating from "./Rating";
-import Marquee from "react-fast-marquee";
+import { Book } from "@/lib/CatalogBooks";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Star, Calendar, User, BookOpen } from "lucide-react";
 
-interface Book {
-    writerName: string;
-    bookTitle: string;
-    ratings: number;
-    bookCover: string;
+interface BookCardProps {
+    book: Book;
 }
 
-const BookCard = ({ book }: { book: Book }) => {
-    const { writerName, bookTitle, ratings, bookCover } = book;
-    const titleRef = useRef<HTMLHeadingElement>(null);
-    const [isOverflowing, setIsOverflowing] = useState(false);
-
-    // Check if the title is overflowing
-    useEffect(() => {
-        if (titleRef.current) {
-            setIsOverflowing(titleRef.current.scrollWidth > titleRef.current.clientWidth);
-        }
-    }, [bookTitle]);
-
+const BookCard = ({ book }: BookCardProps) => {
     return (
-        <div className="w-full h-[420px] mt-10 border border-gray-200 shadow-md bg-white rounded-lg p-4 flex flex-col justify-between overflow-hidden hover:shadow-xl transition-shadow duration-300">
-            <div className="flex flex-col items-center space-y-3">
+        <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-card border-0 shadow-md overflow-hidden">
+            <div className="relative">
                 <img
-                    src={bookCover}
-                    alt={bookTitle}
-                    className="w-40 h-60 object-cover rounded-md shadow-sm overflow-hidden"
+                    src={book.coverImage}
+                    alt={book.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <Rating key={ratings} />
-                <div className="max-h-[60px] overflow-hidden text-center w-full">
-                    {isOverflowing ? (
-                        <Marquee gradient={false} speed={50} className="w-full">
-                            <h2 className="text-lg font-semibold text-gray-800">
-                                {bookTitle}
-                            </h2>
-                        </Marquee>
-                    ) : (
-                        <h2
-                            ref={titleRef}
-                            className="text-lg font-semibold text-gray-800 truncate"
-                        >
-                            {bookTitle}
-                        </h2>
-                    )}
-                    <p className="text-gray-500 text-sm truncate overflow-hidden text-ellipsis">
-                        {writerName || "Author Unlisted"}
-                    </p>
+                <div className="absolute top-2 right-2">
+                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                        {book.subject}
+                    </Badge>
+                </div>
+                <div className="absolute bottom-2 left-2 flex items-center gap-1 bg-black/70 text-white px-2 py-1 rounded">
+                    <Star size={12} className="fill-yellow-400 text-yellow-400" />
+                    <span className="text-xs font-medium">{book.rating}</span>
                 </div>
             </div>
-            <button className="btn btn-success w-full btn-sm mt-4 py-2 rounded-md hover:bg-green-600 transition-colors duration-300">
-                Add to My List
-            </button>
-        </div>
+            
+            <CardContent className="p-4 space-y-3">
+                <div>
+                    <h3 className="font-bold text-foreground line-clamp-2 group-hover:text-primary transition-colors">
+                        {book.title}
+                    </h3>
+                    <div className="flex items-center gap-1 text-muted-foreground text-sm mt-1">
+                        <User size={12} />
+                        <span className="line-clamp-1">{book.author}</span>
+                    </div>
+                </div>
+
+                <div className="space-y-2 text-xs text-muted-foreground">
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-1">
+                            <Calendar size={12} />
+                            <span>{book.year}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                            <BookOpen size={12} />
+                            <span>{book.pages}p</span>
+                        </div>
+                    </div>
+                    
+                    <div className="text-xs">
+                        <span className="font-medium">Publisher:</span> {book.publisher}
+                    </div>
+                    
+                    <div className="text-xs">
+                        <span className="font-medium">ISBN:</span> {book.isbn}
+                    </div>
+                </div>
+
+                <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
+                    {book.description}
+                </p>
+            </CardContent>
+        </Card>
     );
 };
-
 
 export default BookCard;
